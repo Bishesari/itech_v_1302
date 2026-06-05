@@ -45,21 +45,22 @@ class SuperAdminSeeder extends Seeder
             ]
         );
 
-        $role = Role::where('slug', 'super-admin')->first();
-
-        if ($role) {
+        $roles = Role::whereIn('slug', [
+            'super-admin',
+            'newbie',
+            'teacher',
+        ])->get();
+        foreach ($roles as $role) {
 
             UserRole::updateOrCreate(
-
                 [
                     'user_id' => $user->id,
                     'role_id' => $role->id,
                     'institute_id' => null,
                     'branch_id' => null,
                 ],
-
                 [
-                    'is_last_selected' => true,
+                    'is_last_selected' => $role->slug === 'super-admin',
                 ]
             );
         }
