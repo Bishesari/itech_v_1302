@@ -15,10 +15,10 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->unique()->constrained()->cascadeOnDelete();
             // نوع شناسه: national_id, foreigner_id, passport
-            
+
             $table->enum('identifier_type', ['national_id', 'foreigner_id', 'passport'])->default('national_id');
             // مقدار شناسه (کد ملی یا پاسپورت یا کد فراگیر)
-            
+
             $table->string('identifier_value', 20);
 
             $table->tinyInteger('gender')->nullable();
@@ -61,7 +61,7 @@ return new class extends Migration
 
             $table->timestamps();
 
-            $table->unique(['identifier_type','identifier_value']);
+            $table->unique(['identifier_type', 'identifier_value']);
         });
     }
 

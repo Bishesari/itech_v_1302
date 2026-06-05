@@ -18,5 +18,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ProvinceSeeder::class);
         $this->call(CitySeeder::class);
         $this->call(InstituteSeeder::class);
+        $this->call(BranchSeeder::class);
+        $this->call(SuperAdminSeeder::class);
     }
 }

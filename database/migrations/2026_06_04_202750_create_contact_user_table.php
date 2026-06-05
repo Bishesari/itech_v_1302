@@ -29,8 +29,6 @@ return new class extends Migration
 
             $table->unique(['user_id', 'contact_id']);
 
-            $table->index('user_id');
-            $table->index('contact_id');
         });
 
     }

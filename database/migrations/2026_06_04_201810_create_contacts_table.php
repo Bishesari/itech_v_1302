@@ -15,15 +15,16 @@ return new class extends Migration
 
             $table->id();
 
-            $table->string('contact_value', 150);
-            $table->string('type', 20); // mobile, phone, email ...
+            $table->enum('type', ['mobile', 'phone', 'email', 'WhatsApp', 'telegram'])->default('mobile');
+            $table->string('value', 150);
+            $table->string('label', 20)->nullable();
 
             $table->boolean('is_verified')->default(false);
             $table->boolean('is_active')->default(true);
 
             $table->timestamps();
 
-            $table->unique(['type', 'contact_value']);
+            $table->unique(['type', 'value']);
 
             $table->index('type');
             $table->index('is_active');

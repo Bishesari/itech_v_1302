@@ -6,5 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Contact extends Model
 {
-    //
+    public function users()
+    {
+        return $this->belongsToMany(User::class)
+            ->withPivot('is_primary')
+            ->withTimestamps();
+    }
+
 }
