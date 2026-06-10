@@ -13,6 +13,8 @@ class extends Component
 };
 ?>
 
-<div>
-    {{-- Live as if you were to die tomorrow. Learn as if you were to live forever. - Mahatma Gandhi --}}
-</div>
+<flux:main container>
+    <flux:heading size="xl" level="1">Good afternoon, Olivia</flux:heading>
+    <flux:text class="mt-2 mb-6 text-base">Here's what's new today</flux:text>
+    <flux:separator variant="subtle" />
+</flux:main>

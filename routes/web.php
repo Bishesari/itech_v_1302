@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-// Route::view('/', 'welcome')->name('home');
 Route::livewire('/', 'pages::welcome')->name('home');
 
 
